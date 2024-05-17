@@ -1,0 +1,165 @@
+<template>
+
+  <div class="slds-container_center slds-container_x-large">
+
+    <nav aria-label="Style Guide Navigation" class="slds-tabs_default slds-tabs_medium slds-m-bottom_medium">
+      <ul class="slds-tabs_default__nav">
+        <template for:each={pages} for:item="page">
+          <li class={page.classes} key={page.value}>
+            <a href="#"
+              aria-selected={page.active}
+              class="slds-tabs_default__link"
+              data-key={page.value}
+              role="tab"
+              tabindex={page.tabIndex}
+              onclick={handleTabClick}>
+              {page.label}
+            </a>
+          </li>
+        </template>
+      </ul>
+    </nav>
+
+    <section
+      aria-labelledby="type-head"
+      class="slds-card"
+      id="type">
+      <div class="slds-card__header slds-grid">
+        <div class="slds-media slds-media_center">
+          <div class="slds-media__body">
+            <h2 class="slds-card__header-title" id="type-head">
+              Typography
+            </h2>
+          </div>
+        </div>
+      </div>
+      <div class="slds-card__body slds-card__body_inner">
+        <div class="slds-m-top_small slds-m-bottom_medium">
+          <h3 class="slds-text-heading_small slds-p-bottom_medium">
+            Text Regular
+          </h3>
+          <div class="slds-m-left_large slds-text-body_regular">The quick brown fox jumps over the lazy dog.</div>
+        </div>
+        <div class="slds-m-top_small slds-m-bottom_medium">
+          <h3 class="slds-text-heading_small slds-p-bottom_medium">
+            Text Small
+          </h3>
+          <div class="slds-m-left_large slds-text-body_small">The quick brown fox jumps over the lazy dog.</div>
+        </div>
+        <div class="slds-m-top_small slds-m-bottom_medium">
+          <h3 class="slds-text-heading_small slds-p-bottom_medium">
+            Heading Large
+          </h3>
+          <div class="slds-m-left_large slds-text-heading_large">The quick brown fox jumps over the lazy dog.</div>
+        </div>
+        <div class="slds-m-top_small slds-m-bottom_medium">
+          <h3 class="slds-text-heading_small slds-p-bottom_medium">
+            Heading Medium
+          </h3>
+          <div class="slds-m-left_large slds-text-heading_medium">The quick brown fox jumps over the lazy dog.</div>
+        </div>
+        <div class="slds-m-top_small slds-m-bottom_medium">
+          <h3 class="slds-text-heading_small slds-p-bottom_medium">
+            Heading Small
+          </h3>
+          <div class="slds-m-left_large slds-text-heading_small">The quick brown fox jumps over the lazy dog.</div>
+        </div>
+        <div class="slds-m-top_small slds-m-bottom_medium">
+          <h3 class="slds-text-heading_small slds-p-bottom_medium">
+            Title
+          </h3>
+          <div class="slds-m-left_large slds-text-title">The quick brown fox jumps over the lazy dog.</div>
+        </div>
+        <div class="slds-m-top_small slds-m-bottom_medium">
+          <h3 class="slds-text-heading_small slds-p-bottom_medium">
+            Title Caps
+          </h3>
+          <div class="slds-m-left_large slds-text-title_caps">The quick brown fox jumps over the lazy dog.</div>
+        </div>
+        <div class="slds-m-top_small slds-m-bottom_medium">
+          <h3 class="slds-text-heading_small slds-p-bottom_medium">
+            Longform
+          </h3>
+          <div class="slds-m-left_large slds-text-longform">
+            <p>The quick brown fox jumps over the lazy dog.</p>
+            <p>The quick brown fox jumps over the lazy dog.</p>
+            <h3 class="slds-text-heading_small">Heading</h3>
+            <ul>
+              <li>The quick brown fox jumps over the lazy dog.</li>
+              <li>The quick brown fox jumps over the lazy dog.
+                <ul>
+                  <li>The quick brown fox jumps over the lazy dog.</li>
+                  <li>The quick brown fox jumps over the lazy dog.
+                    <ul>
+                      <li>The quick brown fox jumps over the lazy dog.</li>
+                      <li>The quick brown fox jumps over the lazy dog.</li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <h3 class="slds-text-heading_small">Heading</h3>
+            <ol>
+              <li>The quick brown fox jumps over the lazy dog.</li>
+              <li>The quick brown fox jumps over the lazy dog.
+                <ol>
+                  <li>The quick brown fox jumps over the lazy dog.</li>
+                  <li>The quick brown fox jumps over the lazy dog.
+                    <ol>
+                      <li>The quick brown fox jumps over the lazy dog.</li>
+                      <li>The quick brown fox jumps over the lazy dog.</li>
+                    </ol>
+                  </li>
+                </ol>
+              </li>
+            </ol>
+          </div>
+        </div>
+        <div class="slds-m-top_small slds-m-bottom_medium">
+          <h3 class="slds-text-heading_small slds-p-bottom_medium">
+            Color Default
+          </h3>
+          <div class="slds-m-left_large slds-text-color_default">The quick brown fox jumps over the lazy dog.</div>
+        </div>
+        <div class="slds-m-top_small slds-m-bottom_medium">
+          <h3 class="slds-text-heading_small slds-p-bottom_medium">
+            Color Success
+          </h3>
+          <div class="slds-m-left_large slds-text-color_success">The quick brown fox jumps over the lazy dog.</div>
+        </div>
+        <div class="slds-m-top_small slds-m-bottom_medium">
+          <h3 class="slds-text-heading_small slds-p-bottom_medium">
+            Color Weak
+          </h3>
+          <div class="slds-m-left_large slds-text-color_weak">The quick brown fox jumps over the lazy dog.</div>
+        </div>
+        <div class="slds-m-top_small slds-m-bottom_medium">
+          <h3 class="slds-text-heading_small slds-p-bottom_medium">
+            Color Error
+          </h3>
+          <div class="slds-m-left_large slds-text-color_error">The quick brown fox jumps over the lazy dog.</div>
+        </div>
+        <div class="slds-m-top_small slds-m-bottom_medium">
+          <h3 class="slds-text-heading_small slds-p-bottom_medium">
+            Destructive
+          </h3>
+          <div class="slds-m-left_large slds-text-color_destructive">The quick brown fox jumps over the lazy dog.</div>
+        </div>
+        <div class="slds-m-top_small slds-m-bottom_medium">
+          <h3 class="slds-text-heading_small slds-p-bottom_medium">
+            Inverse Color
+          </h3>
+          <div class="slds-m-left_large demo-only" style="padding:0.5rem; background-color: var(--dxp-g-root-contrast)">
+            <div class="slds-text-color_inverse">The quick brown fox jumps over the lazy dog.</div>
+          </div>
+        </div>
+        <div class="slds-m-top_small slds-m-bottom_medium">
+          <h3 class="slds-text-heading_small slds-p-bottom_medium">
+            Monospace
+          </h3>
+          <div class="slds-m-left_large slds-text-font_monospace">The quick brown fox jumps over the lazy dog.</div>
+        </div>
+      </div>
+    </section>
+  </div>
+</template>

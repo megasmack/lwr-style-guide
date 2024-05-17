@@ -1,0 +1,77 @@
+<template>
+  <div class="slds-container_center slds-container_x-large">
+
+    <nav aria-label="Style Guide Navigation" class="slds-tabs_default slds-tabs_medium slds-m-bottom_medium">
+      <ul class="slds-tabs_default__nav">
+        <template for:each={pages} for:item="page">
+          <li class={page.classes} key={page.value}>
+            <a href="#"
+              aria-selected={page.active}
+              class="slds-tabs_default__link"
+              data-key={page.value}
+              role="tab"
+              tabindex={page.tabIndex}
+              onclick={handleTabClick}>
+              {page.label}
+            </a>
+          </li>
+        </template>
+      </ul>
+    </nav>
+
+    <section
+      aria-labelledby="colors-head"
+      class="slds-card"
+      id="colors">
+      <div class="slds-card__header slds-grid">
+        <div
+          class="slds-media slds-media_center slds-has-flexi-truncate">
+          <div class="slds-media__body">
+            <h2 class="slds-card__header-title" id="colors-head">
+              Colors
+            </h2>
+          </div>
+        </div>
+      </div>
+      <div class="slds-card__body slds-card__body_inner" lwc:ref="colors">
+        <template for:each={styleHooks} for:item="section">
+          <div key={section.key}>
+            <h3 class="slds-text-heading_small">{section.title}</h3>
+            <div class="slds-grid slds-wrap slds-gutters">
+
+              <template for:each={section.cssVars} for:item="group">
+                <div class="slds-col slds-small-size_1-of-2" key={group.key}>
+                  <template for:each={group} for:item="color">
+                    <div key={color.key}>
+                      <div class="sms-style-guide_color-chip slds-m-vertical_small slds-box_border">
+                        <div
+                          class="sms-style-guide_color slds-border_right"
+                          style={color.style}></div>
+                        <div class="slds-p-around_small">
+                          <button class="slds-text-body_regular" data-color={color.cssVar} onclick={handleCopyCode}
+                            type="button">
+                            {color.cssVar}
+                            <lightning-icon alternative-text="Copy to clipboard"
+                              icon-name="utility:copy_to_clipboard"
+                              size="xx-small"
+                              title="Copy to clipboard">
+                            </lightning-icon>
+                          </button>
+                          <div class="slds-text-body_small">
+                            {color.hexColor} / {color.rgbColor}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </template>
+                </div>
+              </template>
+
+            </div>
+            <hr />
+          </div>
+        </template>
+      </div>
+    </section>
+  </div>
+</template>

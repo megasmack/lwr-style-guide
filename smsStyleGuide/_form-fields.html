@@ -1,0 +1,208 @@
+<template>
+  <div class="slds-container_center slds-container_x-large">
+
+    <nav aria-label="Style Guide Navigation" class="slds-tabs_default slds-tabs_medium slds-m-bottom_medium">
+      <ul class="slds-tabs_default__nav">
+        <template for:each={pages} for:item="page">
+          <li class={page.classes} key={page.value}>
+            <a href="#"
+              aria-selected={page.active}
+              class="slds-tabs_default__link"
+              data-key={page.value}
+              role="tab"
+              tabindex={page.tabIndex}
+              onclick={handleTabClick}>
+              {page.label}
+            </a>
+          </li>
+        </template>
+      </ul>
+    </nav>
+
+    <section
+      aria-labelledby="form-field-head"
+      class="slds-card"
+      id="form-field">
+      <div class="slds-card__header slds-grid">
+        <div
+          class="slds-media slds-media_center slds-has-flexi-truncate">
+          <div class="slds-media__body">
+            <h2 class="slds-card__header-title" id="form-field-head">
+              Form Fields
+            </h2>
+          </div>
+        </div>
+      </div>
+      <div class="slds-card__body slds-card__body_inner">
+        <div class="slds-m-top_medium slds-m-bottom_x-large">
+          <h2 class="slds-text-heading_medium slds-m-bottom_medium">
+            A text input field.
+          </h2>
+
+          <div class="slds-p-around_medium sms-bg">
+            <lightning-input type="text" label="Enter some text"></lightning-input>
+          </div>
+        </div>
+
+        <div class="slds-m-top_medium slds-m-bottom_x-large">
+          <h2 class="slds-text-heading_medium slds-m-bottom_medium">
+            A text input field with an initial value.
+          </h2>
+
+          <div class="slds-p-around_medium sms-bg">
+            <lightning-input type="text" label="Enter some text" value="ACME Inc."></lightning-input>
+          </div>
+        </div>
+
+        <div class="slds-m-top_medium slds-m-bottom_x-large">
+          <h2 class="slds-text-heading_medium slds-m-bottom_medium">
+            A text input field with placeholder text.
+          </h2>
+
+          <div class="slds-p-around_medium sms-bg">
+            <lightning-input type="text" label="Enter some text" placeholder="type here..."></lightning-input>
+          </div>
+        </div>
+
+        <div class="slds-m-top_medium slds-m-bottom_x-large">
+          <h2 class="slds-text-heading_medium slds-m-bottom_medium">
+            A text input field that is required.
+          </h2>
+
+          <div class="slds-p-around_medium sms-bg">
+            <lightning-input type="text" label="Enter some text" placeholder="type here..." required></lightning-input>
+          </div>
+        </div>
+
+        <div class="slds-m-top_medium slds-m-bottom_x-large">
+          <h2 class="slds-text-heading_medium slds-m-bottom_medium">
+            A text input field that is disabled.
+          </h2>
+
+          <div class="slds-p-around_medium sms-bg">
+            <lightning-input type="text" label="Enter some text" placeholder="type here..." disabled></lightning-input>
+          </div>
+        </div>
+
+        <div class="slds-m-top_medium slds-m-bottom_x-large">
+          <h2 class="slds-text-heading_medium slds-m-bottom_medium">
+            A text input field that is read-only.
+          </h2>
+
+          <div class="slds-p-around_medium sms-bg">
+            <lightning-input type="text" label="Enter some text" value="Stark Industries" readonly></lightning-input>
+          </div>
+        </div>
+
+        <div class="slds-m-top_medium slds-m-bottom_x-large">
+          <h2 class="slds-text-heading_medium slds-m-bottom_medium">
+            Basic Input Date
+          </h2>
+          <div class="slds-p-around_medium sms-bg">
+            <lightning-input type="date" name="input1" label="Enter a date"></lightning-input>
+          </div>
+        </div>
+
+        <div class="slds-m-top_medium slds-m-bottom_x-large">
+          <h2 class="slds-text-heading_medium slds-m-bottom_medium">
+            Advanced Input Date
+          </h2>
+          <div class="slds-p-around_medium sms-bg">
+            <lightning-input type="date" name="input5" label="Required date field" required
+              value="2020-09-07"></lightning-input>
+            <lightning-input type="date" name="input6" label="Read-only date field" readonly
+              value="2020-09-07"></lightning-input>
+            <lightning-input type="date" name="input7" label="Disabled date field" disabled
+              value="2020-09-07"></lightning-input>
+            <lightning-input type="date" name="input8" label="Date field with min and max values" value="2020-09-07"
+              min="2020-09-05" max="2020-09-22"></lightning-input>
+          </div>
+        </div>
+        <div class="slds-m-top_medium slds-m-bottom_x-large">
+          <h2 class="slds-text-heading_medium slds-m-bottom_medium">
+            Basic Input Date Time
+          </h2>
+          <div class="slds-p-around_medium sms-bg">
+            <lightning-input type="datetime" name="input1" label="Enter a date/time value"></lightning-input>
+            <lightning-input type="datetime" name="input2" label="Date Time field with a predefined value"
+              value="2020-09-12T18:13:41Z"></lightning-input>
+          </div>
+        </div>
+
+        <div class="slds-m-top_medium slds-m-bottom_x-large">
+          <h2 class="slds-text-heading_medium slds-m-bottom_medium">
+            Color Input
+          </h2>
+          <div class="slds-p-around_medium sms-bg">
+            <lightning-input type="color" name="input-color" label="Favorite color" value="#8DC141"></lightning-input>
+          </div>
+        </div>
+
+        <div class="slds-m-top_medium slds-m-bottom_x-large">
+          <h2 class="slds-text-heading_medium slds-m-bottom_medium">
+            File Input
+          </h2>
+          <div class="slds-p-around_medium sms-bg">
+            <lightning-input type="file" label="Attachment"></lightning-input>
+          </div>
+        </div>
+
+        <div class="slds-m-top_medium slds-m-bottom_x-large">
+          <h2 class="slds-text-heading_medium slds-m-bottom_medium">
+            Basic Checkbox
+          </h2>
+          <div class="slds-p-around_medium sms-bg">
+            <lightning-input type="checkbox" label="Basic option" name="input1"></lightning-input>
+            <lightning-input type="checkbox" label="Required option" name="input2" checked required></lightning-input>
+            <lightning-input type="checkbox" label="Disabled option" name="input3" checked disabled></lightning-input>
+          </div>
+        </div>
+
+        <div class="slds-m-top_medium slds-m-bottom_x-large">
+          <h2 class="slds-text-heading_medium slds-m-bottom_medium">
+            Checkbox Button
+          </h2>
+          <div class="slds-p-around_medium sms-bg">
+            <lightning-input type="checkbox-button" label="Input One" name="input1"></lightning-input>
+            <lightning-input type="checkbox-button" label="Input Two" name="input2" checked required></lightning-input>
+            <lightning-input type="checkbox-button" label="Input Three" name="input3" disabled></lightning-input>
+            <lightning-input type="checkbox-button" label="Input Four" name="input3" checked disabled></lightning-input>
+          </div>
+        </div>
+
+        <div class="slds-m-top_medium slds-m-bottom_x-large">
+          <h2 class="slds-text-heading_medium slds-m-bottom_medium">
+            Toggle
+          </h2>
+          <div class="slds-p-around_medium sms-bg">
+            <lightning-input type="toggle" label="Basic option" name="input1"></lightning-input>
+            <lightning-input type="toggle" label="Required option" name="input2" checked required></lightning-input>
+            <lightning-input type="toggle" label="Disabled option" name="input3" checked disabled></lightning-input>
+          </div>
+        </div>
+
+        <div class="slds-m-top_medium slds-m-bottom_x-large">
+          <h2 class="slds-text-heading_medium slds-m-bottom_medium">
+            Search Input
+          </h2>
+          <div class="slds-p-around_medium sms-bg">
+            <lightning-input name="enter-search" label="Search" type="search"></lightning-input>
+          </div>
+        </div>
+
+        <div class="slds-m-top_medium slds-m-bottom_x-large">
+          <h2 class="slds-text-heading_medium slds-m-bottom_medium">
+            Basic Combobox
+          </h2>
+          <div class="slds-p-around_medium sms-bg">
+            <lightning-combobox
+              name="progress"
+              label="Status"
+              placeholder="Select Progress"></lightning-combobox>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </div>
+</template>
