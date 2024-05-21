@@ -1,0 +1,92 @@
+<template>
+  <div class="slds-container_center slds-container_x-large">
+
+    <nav aria-label="Style Guide Navigation" class="slds-tabs_default slds-tabs_medium slds-m-bottom_medium">
+      <ul class="slds-tabs_default__nav">
+        <template for:each={pages} for:item="page">
+          <li class={page.classes} key={page.value}>
+            <a href="#"
+              aria-selected={page.active}
+              class="slds-tabs_default__link"
+              data-key={page.value}
+              role="tab"
+              tabindex={page.tabIndex}
+              onclick={handleTabClick}>
+              {page.label}
+            </a>
+          </li>
+        </template>
+      </ul>
+    </nav>
+
+    <lightning-card>
+      <div slot="title">
+        Accordion
+      </div>
+      <lightning-accordion class="example-accordion" active-section-name="B">
+        <lightning-accordion-section name="A" label="Accordion Title A">
+          <lightning-button-menu slot="actions"
+            alternative-text="Show menu"
+            icon-size="x-small"
+            menu-alignment="right">
+            <lightning-menu-item value="New" label="Menu Item One"></lightning-menu-item>
+            <lightning-menu-item value="Edit" label="Menu Item Two"></lightning-menu-item>
+          </lightning-button-menu>
+          <!-- spell-checker: disable -->
+          <p>Donec a sagittis ligula. Aliquam sollicitudin nisl in velit pharetra volutpat. Vestibulum scelerisque
+            lacinia
+            pharetra. Vivamus in purus pellentesque, commodo ligula at, feugiat diam. In tincidunt volutpat ultricies.
+            Vivamus tristique nunc lacus, ac varius erat vulputate at. Suspendisse eleifend ante a leo ultrices
+            convallis.
+            Suspendisse potenti.</p>
+          </p>Mauris pharetra odio urna, ut tempor augue gravida in. Aenean varius fringilla enim quis commodo. Vivamus
+          hendrerit neque nec augue congue, ut auctor dolor suscipit. Integer orci ante, suscipit at metus vitae, porta
+          malesuada urna. Morbi in erat suscipit, placerat dolor tincidunt, bibendum tellus. Duis mauris risus, laoreet
+          sed
+          sapien pretium, porta auctor purus. Cras pretium risus sem, a feugiat enim pretium malesuada. Fusce viverra
+          eget
+          neque eu commodo. Sed posuere placerat est. Sed tincidunt ultrices nulla ut porta. Vivamus mattis lobortis
+          est,
+          vel rhoncus diam congue ut. Donec id dui dapibus, pharetra justo in, dictum est. Praesent in turpis vel ex
+          dictum
+          ullamcorper sed ut arcu. Nam nec leo quis tellus dapibus porta ac vel nulla.</p>
+          <!-- spell-checker: enable -->
+        </lightning-accordion-section>
+
+        <lightning-accordion-section name="B" label="Accordion Title B">
+          <!-- spell-checker: disable -->
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sollicitudin mauris quis sem cursus vehicula.
+            Vestibulum sed magna in quam scelerisque tristique. Etiam dolor dolor, volutpat mattis massa a, sodales
+            scelerisque nulla. Suspendisse ut purus magna. Aliquam condimentum nisi id dignissim rutrum. Integer ornare
+            ex
+            at ex scelerisque volutpat. Morbi pretium a mi id faucibus.</p>
+          <p></p>Sed eleifend eget augue at blandit. Donec tortor tellus, facilisis nec magna ut, pharetra blandit urna.
+          Proin fermentum lorem et lacinia dignissim. Sed mollis faucibus malesuada. Fusce ut ligula felis. Pellentesque
+          posuere velit quis urna malesuada pharetra. In sed lorem tristique, ultrices elit sed, lobortis nibh. In hac
+          habitasse platea dictumst. Suspendisse a euismod nisl. In sapien odio, tincidunt vitae sapien et, maximus
+          luctus
+          orci. In interdum enim purus, a scelerisque quam elementum hendrerit.</p>
+          <!-- spell-checker: enable -->
+        </lightning-accordion-section>
+
+        <lightning-accordion-section name="C" label="Accordion Title C">
+          <!-- spell-checker: disable -->
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sollicitudin mauris quis sem cursus vehicula.
+          </p>
+          <p>Vestibulum sed magna in quam scelerisque tristique. Etiam dolor dolor, volutpat mattis massa a, sodales
+            scelerisque nulla. Suspendisse ut purus magna. Aliquam condimentum nisi id dignissim rutrum. Integer ornare
+            ex
+            at ex scelerisque volutpat. Morbi pretium a mi id faucibus.</p>
+          <ul class="slds-list_dotted">
+            <li>In ac tellus quis neque rutrum scelerisque.</li>
+            <li>Aliquam sollicitudin purus eu lacus convallis, a iaculis leo fringilla.</li>
+            <li>Suspendisse vehicula odio vel mi luctus, id imperdiet dui porta.</li>
+            <li>Ut finibus arcu quis facilisis porta.</li>
+            <li>Pellentesque euismod ante sit amet elit mattis facilisis.</li>
+          </ul>
+          <!-- spell-checker: enable -->
+        </lightning-accordion-section>
+      </lightning-accordion>
+    </lightning-card>
+  </div>
+</template>

@@ -20,20 +20,11 @@
       </ul>
     </nav>
 
-    <section
-      aria-labelledby="type-head"
-      class="slds-card"
-      id="type">
-      <div class="slds-card__header slds-grid">
-        <div class="slds-media slds-media_center">
-          <div class="slds-media__body">
-            <h2 class="slds-card__header-title" id="type-head">
-              Typography
-            </h2>
-          </div>
-        </div>
+    <lightning-card>
+      <div slot="title">
+        Typography
       </div>
-      <div class="slds-card__body slds-card__body_inner">
+      <div>
         <div class="slds-m-top_small slds-m-bottom_medium">
           <h3 class="slds-text-heading_small slds-p-bottom_medium">
             Text Regular
@@ -45,6 +36,12 @@
             Text Small
           </h3>
           <div class="slds-m-left_large slds-text-body_small">The quick brown fox jumps over the lazy dog.</div>
+        </div>
+        <div class="slds-m-top_small slds-m-bottom_medium">
+          <h3 class="slds-text-heading_small slds-p-bottom_medium">
+            H1 (dxp-text-heading-xlarge)
+          </h3>
+          <h1 class="slds-m-left_large dxp-text-heading-xlarge">The quick brown fox jumps over the lazy dog.</h1>
         </div>
         <div class="slds-m-top_small slds-m-bottom_medium">
           <h3 class="slds-text-heading_small slds-p-bottom_medium">
@@ -160,6 +157,6 @@
           <div class="slds-m-left_large slds-text-font_monospace">The quick brown fox jumps over the lazy dog.</div>
         </div>
       </div>
-    </section>
+    </lightning-card>
   </div>
 </template>

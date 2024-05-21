@@ -1,6 +1,7 @@
 import Toast from 'lightning/toast';
 import ToastContainer from 'lightning/toastContainer';
 import { LightningElement } from 'lwc';
+import AccordionPage from './_accordion.html';
 import ButtonsPage from './_buttons.html';
 import ColorsPage from './_colors.html';
 import FormPage from './_form-fields.html';
@@ -20,6 +21,7 @@ export default class SmsStyleGuide extends LightningElement {
     { label: 'Form Fields', value: 'form' },
     { label: 'Tabs', value: 'tabs' },
     { label: 'Typography', value: 'typography' },
+    { label: 'Accordion', value: 'accordion' },
   ];
   colorObservers = [];
   colorsMapped = false;
@@ -34,6 +36,8 @@ export default class SmsStyleGuide extends LightningElement {
 
   render() {
     switch (this.currentPage) {
+      case 'accordion':
+        return AccordionPage;
       case 'colors':
         return ColorsPage;
       case 'form':

@@ -2,6 +2,12 @@
   --sms-style-guide_color: #ccc;
 }
 
+.sms-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1rem;
+}
+
 .sms-style-guide_color-chip {
   display: flex;
   overflow: hidden;

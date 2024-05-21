@@ -20,61 +20,33 @@
       </ul>
     </nav>
 
-    <section
-      aria-labelledby="buttons-subhead"
-      class="slds-card">
-      <header class="slds-card__header slds-grid">
-        <div
-          class="slds-media slds-media_center slds-has-flexi-truncate">
-          <div class="slds-media__body">
-            <h2 class="slds-card__header-title" id="buttons-subhead">
-              Buttons
-            </h2>
-          </div>
-        </div>
-      </header>
-      <div class="slds-card__body slds-card__body_inner">
+    <lightning-card>
+      <div slot="title">
+        Buttons
+      </div>
+      <div>
         <div class="slds-m-top_small slds-m-bottom_medium">
           <h3 class="slds-text-heading_small slds-p-bottom_medium">
             Primary Buttons
           </h3>
 
-          <lightning-button class="slds-m-left_x-small" label="Base" variant="base"></lightning-button>
+          <div class="sms-buttons">
+            <lightning-button label="Base" variant="base"></lightning-button>
 
-          <lightning-button class="slds-m-left_x-small" label="Neutral"></lightning-button>
+            <lightning-button label="Neutral"></lightning-button>
 
-          <lightning-button class="slds-m-left_x-small" label="Brand" variant="brand"></lightning-button>
+            <lightning-button label="Brand" variant="brand"></lightning-button>
 
-          <lightning-button class="slds-m-left_x-small" label="Brand Outline"
-            variant="brand-outline"></lightning-button>
+            <lightning-button label="Brand Outline"
+              variant="brand-outline"></lightning-button>
 
-          <lightning-button class="slds-m-left_x-small" label="Destructive" variant="destructive"></lightning-button>
+            <lightning-button label="Destructive" variant="destructive"></lightning-button>
 
-          <lightning-button class="slds-m-left_x-small" label="Destructive Text"
-            variant="destructive-text"></lightning-button>
+            <lightning-button label="Destructive Text"
+              variant="destructive-text"></lightning-button>
 
-          <lightning-button class="slds-m-left_x-small" label="Success" variant="success"></lightning-button>
-        </div>
-        <div class="slds-m-top_small slds-m-bottom_medium">
-          <h3 class="slds-text-heading_small slds-p-bottom_medium">
-            Small Buttons
-          </h3>
-
-          <lightning-button class="slds-m-left_x-small" label="Base" variant="base"></lightning-button>
-
-          <lightning-button class="slds-m-left_x-small" label="Neutral"></lightning-button>
-
-          <lightning-button class="slds-m-left_x-small" label="Brand" variant="brand"></lightning-button>
-
-          <lightning-button class="slds-m-left_x-small" label="Brand Outline"
-            variant="brand-outline"></lightning-button>
-
-          <lightning-button class="slds-m-left_x-small" label="Destructive" variant="destructive"></lightning-button>
-
-          <lightning-button class="slds-m-left_x-small" label="Destructive Text"
-            variant="destructive-text"></lightning-button>
-
-          <lightning-button class="slds-m-left_x-small" label="Success" variant="success"></lightning-button>
+            <lightning-button label="Success" variant="success"></lightning-button>
+          </div>
         </div>
 
         <div class="slds-m-top_small slds-m-bottom_medium">
@@ -82,22 +54,24 @@
             Disabled Buttons
           </h3>
 
-          <lightning-button class="slds-m-left_x-small" disabled label="Base" variant="base"></lightning-button>
+          <div class="sms-buttons">
+            <lightning-button disabled label="Base" variant="base"></lightning-button>
 
-          <lightning-button class="slds-m-left_x-small" disabled label="Neutral"></lightning-button>
+            <lightning-button disabled label="Neutral"></lightning-button>
 
-          <lightning-button class="slds-m-left_x-small" disabled label="Brand" variant="brand"></lightning-button>
+            <lightning-button disabled label="Brand" variant="brand"></lightning-button>
 
-          <lightning-button class="slds-m-left_x-small" disabled label="Brand Outline"
-            variant="brand-outline"></lightning-button>
+            <lightning-button disabled label="Brand Outline"
+              variant="brand-outline"></lightning-button>
 
-          <lightning-button class="slds-m-left_x-small" disabled label="Destructive"
-            variant="destructive"></lightning-button>
+            <lightning-button disabled label="Destructive"
+              variant="destructive"></lightning-button>
 
-          <lightning-button class="slds-m-left_x-small" disabled label="Destructive Text"
-            variant="destructive-text"></lightning-button>
+            <lightning-button disabled label="Destructive Text"
+              variant="destructive-text"></lightning-button>
 
-          <lightning-button class="slds-m-left_x-small" disabled label="Success" variant="success"></lightning-button>
+            <lightning-button disabled label="Success" variant="success"></lightning-button>
+          </div>
         </div>
 
         <div class="slds-m-top_small slds-m-bottom_medium">
@@ -105,17 +79,19 @@
             Buttons with Icons
           </h3>
 
-          <lightning-button class="slds-m-left_x-small" icon-name="utility:download" label="Download"
-            variant="base"></lightning-button>
+          <div class="sms-buttons">
+            <lightning-button icon-name="utility:download" label="Download"
+              variant="base"></lightning-button>
 
-          <lightning-button class="slds-m-left_x-small" icon-name="utility:download"
-            label="Download"></lightning-button>
+            <lightning-button icon-name="utility:download"
+              label="Download"></lightning-button>
 
-          <lightning-button class="slds-m-left_x-small" icon-name="utility:download" label="Download"
-            variant="brand"></lightning-button>
+            <lightning-button icon-name="utility:download" label="Download"
+              variant="brand"></lightning-button>
 
-          <lightning-button class="slds-m-left_x-small" icon-name="utility:delete" label="Delete"
-            variant="destructive"></lightning-button>
+            <lightning-button icon-name="utility:delete" label="Delete"
+              variant="destructive"></lightning-button>
+          </div>
         </div>
 
         <div class="slds-m-top_x-large slds-m-bottom_small">
@@ -123,17 +99,19 @@
             Buttons with an icon after the label text
           </h3>
 
-          <lightning-button class="slds-m-left_x-small" icon-name="utility:download" icon-position="right"
-            label="Download" variant="base"></lightning-button>
+          <div class="sms-buttons">
+            <lightning-button icon-name="utility:download" icon-position="right"
+              label="Download" variant="base"></lightning-button>
 
-          <lightning-button class="slds-m-left_x-small" icon-name="utility:download" icon-position="right"
-            label="Download"></lightning-button>
+            <lightning-button icon-name="utility:download" icon-position="right"
+              label="Download"></lightning-button>
 
-          <lightning-button class="slds-m-left_x-small" icon-name="utility:download" icon-position="right"
-            label="Download" variant="brand"></lightning-button>
+            <lightning-button icon-name="utility:download" icon-position="right"
+              label="Download" variant="brand"></lightning-button>
 
-          <lightning-button class="slds-m-left_x-small" icon-name="utility:delete" icon-position="right" label="Delete"
-            variant="destructive"></lightning-button>
+            <lightning-button icon-name="utility:delete" icon-position="right" label="Delete"
+              variant="destructive"></lightning-button>
+          </div>
         </div>
 
         <div class="slds-m-top_small slds-m-bottom_small">
@@ -141,34 +119,34 @@
             Inverse Buttons
           </h3>
 
-          <div class="slds-p-around_medium sms-contrast-bg">
-            <lightning-button class="slds-m-left_x-small" label="Download" variant="inverse"></lightning-button>
+          <div class="slds-p-around_medium sms-buttons sms-contrast-bg">
+            <lightning-button label="Download" variant="inverse"></lightning-button>
 
-            <lightning-button class="slds-m-left_x-small" icon-name="utility:download" label="Download"
+            <lightning-button icon-name="utility:download" label="Download"
               variant="inverse"></lightning-button>
 
-            <lightning-button class="slds-m-left_x-small" icon-name="utility:download" icon-position="right"
+            <lightning-button icon-name="utility:download" icon-position="right"
               label="Download" variant="inverse"></lightning-button>
           </div>
         </div>
 
-        <div class="slds-m-top_medium slds-m-bottom_x-large">
+        <div class="slds-m-top_small slds-m-bottom_small">
           <h3 class="slds-text-heading_small slds-p-bottom_medium">
             Disabled Inverse Buttons
           </h3>
 
-          <div class="slds-p-around_medium sms-contrast-bg">
+          <div class="slds-p-around_medium sms-buttons sms-contrast-bg">
             <lightning-button class=" slds-m-left_x-small" disabled label="Delete" variant="inverse">
             </lightning-button>
 
-            <lightning-button class="slds-m-left_x-small" disabled icon-name="utility:delete" label="Delete"
+            <lightning-button disabled icon-name="utility:delete" label="Delete"
               variant="inverse"></lightning-button>
 
-            <lightning-button class="slds-m-left_x-small" disabled icon-name="utility:delete" icon-position="right"
+            <lightning-button disabled icon-name="utility:delete" icon-position="right"
               label="Delete" variant="inverse"></lightning-button>
           </div>
         </div>
       </div>
-    </section>
+    </lightning-card>
   </div>
 </template>
