@@ -1,6 +1,7 @@
+import { LightningElement, wire } from 'lwc';
+import { CurrentPageReference } from 'lightning/navigation';
 import Toast from 'lightning/toast';
 import ToastContainer from 'lightning/toastContainer';
-import { LightningElement } from 'lwc';
 import AccordionPage from './_accordion.html';
 import ButtonsPage from './_buttons.html';
 import ColorsPage from './_colors.html';
@@ -25,6 +26,19 @@ export default class SmsStyleGuide extends LightningElement {
   ];
   colorObservers = [];
   colorsMapped = false;
+  publishedState;
+
+  // --- Wire Methods ---
+
+  @wire(CurrentPageReference)
+  setCurrentPageReference(currentPageReference) {
+    const app = currentPageReference?.state?.app;
+    if (app === 'commeditor') {
+      this.publishedState = 'Draft';
+    } else {
+      this.publishedState = 'Live';
+    }
+  }
 
   // --- Lifecycle Hooks ---
 
@@ -192,19 +206,35 @@ export default class SmsStyleGuide extends LightningElement {
     });
   }
 
+  get isLive() {
+    return this.publishedState === 'Live';
+  }
+
   // --- Event Handlers ---
 
   handleCopyCode(event) {
-    const { color } = event.target.dataset;
-    this.showToast('Copied to Clipboard', '', 'success', 'pester');
-    navigator.clipboard
-      .writeText(color)
-      .then(() => {
-        this.showToast('Copied to Clipboard', '', 'success', 'pester');
-      })
-      .catch((error) => {
-        console.error('Failed to copy', error);
-      });
+    const { currentTarget } = event;
+    const { color } = currentTarget.dataset;
+    if (color && this.isLive) {
+      navigator.clipboard
+        .writeText(color)
+        .then(() => {
+          this.showToast('Copied to Clipboard', '', 'success', 'pester');
+        })
+        .catch((error) => {
+          console.error('Failed to copy', error);
+        });
+    } else if (!this.isLive) {
+      // The iframe in builder does not give us access to the clipboard.
+      // So we will select the text and let the user copy it.
+      const selection = window.getSelection();
+      const range = document.createRange();
+      range.selectNodeContents(currentTarget);
+      selection.removeAllRanges();
+      selection.addRange(range);
+    } else {
+      console.error('Failed to copy');
+    }
   }
 
   handleTabClick(event) {

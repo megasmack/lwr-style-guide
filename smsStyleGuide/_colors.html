@@ -41,11 +41,13 @@
                           <button class="slds-text-body_regular" data-color={color.cssVar} onclick={handleCopyCode}
                             type="button">
                             {color.cssVar}
-                            <lightning-icon alternative-text="Copy to clipboard"
-                              icon-name="utility:copy_to_clipboard"
-                              size="xx-small"
-                              title="Copy to clipboard">
-                            </lightning-icon>
+                            <template lwc:if={isLive}>
+                              <lightning-icon alternative-text="Copy to clipboard"
+                                icon-name="utility:copy_to_clipboard"
+                                size="xx-small"
+                                title="Copy to clipboard">
+                              </lightning-icon>
+                            </template>
                           </button>
                           <div class="slds-text-body_small">
                             {color.hexColor} / {color.rgbColor}
