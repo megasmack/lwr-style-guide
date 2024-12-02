@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="GENERAL_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="IlluminatedCloud" name="Illuminated Cloud">
+      <configuration>
+        <option name="connectionName" value="stevesOrg" />
+        <option name="connectionType" value="OAUTH" />
+        <option name="defaultSourceRootUrl" value="file://$MODULE_DIR$/force-app" />
+      </configuration>
+    </facet>
+  </component>
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/config" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/force-app" isTestSource="false" />
+    </content>
+    <orderEntry type="jdk" jdkName="IlluminatedCloud (lwr-style-guide/stevesOrg)" jdkType="IlluminatedCloud" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="lwr-style-guide/lwc_types" level="project" />
+  </component>
+</module>
