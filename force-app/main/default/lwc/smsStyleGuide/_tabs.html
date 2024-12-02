@@ -25,7 +25,7 @@
         Tabs
       </div>
 
-      <div>
+      <div class="slds-p-around_medium">
         <div class="slds-m-top_small slds-m-bottom_medium">
           <h3 class="slds-text-heading_small slds-p-bottom_medium">
             Basic Tabset
@@ -42,39 +42,39 @@
             </lightning-tab>
           </lightning-tabset>
         </div>
-      </div>
 
-      <div class="slds-card__body slds-card__body_inner">
-        <div class="slds-m-top_small slds-m-bottom_medium">
-          <h3 class="slds-text-heading_small slds-p-bottom_medium">
-            Scoped Overflow Tabset
-          </h3>
-          <lightning-tabset variant="scoped">
-            <template for:each={tabOverflow} for:item="tab">
-              <lightning-tab label={tab.label} key={tab.value} value={tab.value}>
-                {tab.content}
-              </lightning-tab>
-            </template>
-          </lightning-tabset>
+        <div class="slds-card__body slds-card__body_inner">
+          <div class="slds-m-top_small slds-m-bottom_medium">
+            <h3 class="slds-text-heading_small slds-p-bottom_medium">
+              Scoped Overflow Tabset
+            </h3>
+            <lightning-tabset variant="scoped">
+              <template for:each={tabOverflow} for:item="tab">
+                <lightning-tab label={tab.label} key={tab.value} value={tab.value}>
+                  {tab.content}
+                </lightning-tab>
+              </template>
+            </lightning-tabset>
+          </div>
         </div>
-      </div>
 
-      <div class="slds-card__body slds-card__body_inner">
-        <div class="slds-m-top_small slds-m-bottom_medium">
-          <h3 class="slds-text-heading_small slds-p-bottom_medium">
-            Vertical Tabset
-          </h3>
-          <lightning-tabset variant="vertical">
-            <lightning-tab label="Item One">
-              One Content !
-            </lightning-tab>
-            <lightning-tab label="Item Two">
-              Two Content !
-            </lightning-tab>
-            <lightning-tab label="Item Three">
-              Three Content !
-            </lightning-tab>
-          </lightning-tabset>
+        <div class="slds-card__body slds-card__body_inner">
+          <div class="slds-m-top_small slds-m-bottom_medium">
+            <h3 class="slds-text-heading_small slds-p-bottom_medium">
+              Vertical Tabset
+            </h3>
+            <lightning-tabset variant="vertical">
+              <lightning-tab label="Item One">
+                One Content !
+              </lightning-tab>
+              <lightning-tab label="Item Two">
+                Two Content !
+              </lightning-tab>
+              <lightning-tab label="Item Three">
+                Three Content !
+              </lightning-tab>
+            </lightning-tabset>
+          </div>
         </div>
       </div>
     </lightning-card>

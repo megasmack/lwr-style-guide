@@ -6,6 +6,7 @@ import AccordionPage from './_accordion.html';
 import ButtonsPage from './_buttons.html';
 import ColorsPage from './_colors.html';
 import FormPage from './_form-fields.html';
+import ToastsPage from './_toasts.html';
 import TabsPage from './_tabs.html';
 import TypographyPage from './_typography.html';
 import { COLUMN_SIZE_CLASSES, DXP_COLORS, NUM_OF_TABS } from './constants';
@@ -21,6 +22,7 @@ export default class SmsStyleGuide extends LightningElement {
     { label: 'Colors', value: 'colors' },
     { label: 'Form Fields', value: 'form' },
     { label: 'Tabs', value: 'tabs' },
+    { label: 'Toasts', value: 'toasts' },
     { label: 'Typography', value: 'typography' },
     { label: 'Accordion', value: 'accordion' },
   ];
@@ -61,6 +63,8 @@ export default class SmsStyleGuide extends LightningElement {
         return ColorsPage;
       case 'form':
         return FormPage;
+      case 'toasts':
+        return ToastsPage;
       case 'tabs':
         return TabsPage;
       case 'typography':
@@ -219,10 +223,10 @@ export default class SmsStyleGuide extends LightningElement {
 
   handleCopyCode(event) {
     const { currentTarget } = event;
-    const { color } = currentTarget.dataset;
-    if (color && this.isLive) {
+    const { code } = currentTarget.dataset;
+    if (code && this.isLive) {
       navigator.clipboard
-        .writeText(color)
+        .writeText(code)
         .then(() => {
           this.showToast('Copied to Clipboard', '', 'success', 'pester');
         })

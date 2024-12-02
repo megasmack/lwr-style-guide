@@ -1,5 +1,12 @@
 # smsStyleGuide Changelog
 
+## v1.0.1
+
+### Added
+- Toast styling section.
+- Added Salesforce project files.
+- Added Hashtag navigation to main tabs.
+
 ## v1.0.0
 
 ### Added

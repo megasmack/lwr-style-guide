@@ -23,7 +23,7 @@
       <div slot="title">
         Colors
       </div>
-      <div lwc:ref="colors">
+      <div lwc:ref="colors" class="slds-p-around_medium">
         <template for:each={styleHooks} for:item="section">
           <div key={section.key}>
             <h3 class="slds-text-heading_small">{section.title}</h3>
@@ -38,7 +38,7 @@
                           class="sms-style-guide_color slds-border_right"
                           style={color.style}></div>
                         <div class="slds-p-around_small">
-                          <button class="slds-text-body_regular" data-color={color.cssVar} onclick={handleCopyCode}
+                          <button class="slds-text-body_regular" data-code={color.cssVar} onclick={handleCopyCode}
                             type="button">
                             {color.cssVar}
                             <template lwc:if={isLive}>

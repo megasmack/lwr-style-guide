@@ -1,0 +1,170 @@
+<template>
+  <div class="slds-container_center slds-container_x-large">
+
+    <nav aria-label="Style Guide Navigation" class="slds-tabs_default slds-tabs_medium slds-m-bottom_medium">
+      <ul class="slds-tabs_default__nav">
+        <template for:each={pages} for:item="page">
+          <li class={page.classes} key={page.value}>
+            <a href="#"
+               aria-selected={page.active}
+               class="slds-tabs_default__link"
+               data-key={page.value}
+               role="tab"
+               tabindex={page.tabIndex}
+               onclick={handleTabClick}>
+              {page.label}
+            </a>
+          </li>
+        </template>
+      </ul>
+    </nav>
+
+    <lightning-card>
+      <div slot="title">
+        Toasts
+      </div>
+      <div lwc:ref="notifications" class="slds-p-around_medium">
+        <div class="slds-notify slds-notify_toast fix-notify_toast_animation slds-theme_info" role="status" data-f6-region="">
+          <div class="slds-list_inline" tabindex="0">
+            <lightning-icon class="slds-m-right_small slds-no-flex slds-align-top slds-icon-utility-info slds-icon_container" icon-name="utility:info"></lightning-icon>
+            <div class="slds-notify__content">
+              <h2 class="slds-text-heading_small">Call Five: Jane Johnson</h2>
+              Task due on Jan 8
+              <span class="slds-assistive-text">Press Command + F6 to navigate to the next toast notification or focusable region.</span>
+            </div>
+            <div class="slds-notify__close">
+              <lightning-button-icon icon-name="utility:close" size="large" variant="bare-inverse"></lightning-button-icon>
+            </div>
+          </div>
+        </div>
+        <div class="slds-notify slds-notify_toast fix-notify_toast_animation slds-theme_success" role="status" data-f6-region="">
+          <div class="slds-list_inline" tabindex="0">
+            <lightning-icon class="slds-m-right_small slds-no-flex slds-align-top slds-icon-utility-info slds-icon_container" icon-name="utility:success"></lightning-icon>
+            <div class="slds-notify__content">
+              <h2 class="slds-text-heading_small">Success</h2>
+              Your changes have been saved!
+              <span class="slds-assistive-text">Press Command + F6 to navigate to the next toast notification or focusable region.</span>
+            </div>
+            <div class="slds-notify__close">
+              <lightning-button-icon icon-name="utility:close" size="large" variant="bare-inverse"></lightning-button-icon>
+            </div>
+          </div>
+        </div>
+        <div class="slds-notify slds-notify_toast fix-notify_toast_animation slds-theme_warning" role="status" data-f6-region="">
+          <div class="slds-list_inline" tabindex="0">
+            <lightning-icon class="slds-m-right_small slds-no-flex slds-align-top slds-icon-utility-info slds-icon_container" icon-name="utility:warning"></lightning-icon>
+            <div class="slds-notify__content">
+              <h2 class="slds-text-heading_small">Warning</h2>
+              Your changes will not be saved!
+              <span class="slds-assistive-text">Press Command + F6 to navigate to the next toast notification or focusable region.</span>
+            </div>
+            <div class="slds-notify__close">
+              <lightning-button-icon icon-name="utility:close" size="large" variant="bare-inverse"></lightning-button-icon>
+            </div>
+          </div>
+        </div>
+        <div class="slds-notify slds-notify_toast fix-notify_toast_animation slds-theme_error" role="status" data-f6-region="">
+          <div class="slds-list_inline" tabindex="0">
+            <lightning-icon class="slds-m-right_small slds-no-flex slds-align-top slds-icon-utility-info slds-icon_container" icon-name="utility:error"></lightning-icon>
+            <div class="slds-notify__content">
+              <h2 class="slds-text-heading_small">An error occurred</h2>
+              Please contact your system administrator for help.<span class="slds-assistive-text">Press Command + F6 to navigate to the next toast notification or focusable region.</span>
+            </div>
+            <div class="slds-notify__close">
+              <lightning-button-icon icon-name="utility:close" size="large" variant="bare-inverse"></lightning-button-icon>
+            </div>
+          </div>
+        </div>
+
+        <hr/>
+
+        <h3>Toast Style Hooks</h3>
+        <p>To override Toast styles, you’ll need to use these CSS Properties in a global style sheet in the Head Markup (Settings > Advanced). Place the styles in a :root selector.</p>
+
+        <div class="slds-p-around_xxx-small">
+          <button class="slds-text-body_regular" data-code="--slds-c-toast-radius-border" onclick={handleCopyCode}
+                  type="button">
+            --slds-c-toast-radius-border
+            <template lwc:if={isLive}>
+              <lightning-icon alternative-text="Copy to clipboard"
+                              icon-name="utility:copy_to_clipboard"
+                              size="xx-small"
+                              title="Copy to clipboard">
+              </lightning-icon>
+            </template>
+          </button>
+        </div>
+
+        <div class="slds-p-around_xxx-small">
+          <button class="slds-text-body_regular" data-code="--slds-c-toast-spacing-block-start" onclick={handleCopyCode}
+                  type="button">
+            --slds-c-toast-spacing-block-start
+            <template lwc:if={isLive}>
+              <lightning-icon alternative-text="Copy to clipboard"
+                              icon-name="utility:copy_to_clipboard"
+                              size="xx-small"
+                              title="Copy to clipboard">
+              </lightning-icon>
+            </template>
+          </button>
+        </div>
+
+        <div class="slds-p-around_xxx-small">
+          <button class="slds-text-body_regular" data-code="--slds-c-toast-spacing-block-end" onclick={handleCopyCode}
+                  type="button">
+            --slds-c-toast-spacing-block-end
+            <template lwc:if={isLive}>
+              <lightning-icon alternative-text="Copy to clipboard"
+                              icon-name="utility:copy_to_clipboard"
+                              size="xx-small"
+                              title="Copy to clipboard">
+              </lightning-icon>
+            </template>
+          </button>
+        </div>
+
+        <div class="slds-p-around_xxx-small">
+          <button class="slds-text-body_regular" data-code="--slds-c-toast-spacing-inline-start" onclick={handleCopyCode}
+                  type="button">
+            --slds-c-toast-spacing-inline-start
+            <template lwc:if={isLive}>
+              <lightning-icon alternative-text="Copy to clipboard"
+                              icon-name="utility:copy_to_clipboard"
+                              size="xx-small"
+                              title="Copy to clipboard">
+              </lightning-icon>
+            </template>
+          </button>
+        </div>
+
+        <div class="slds-p-around_xxx-small">
+          <button class="slds-text-body_regular" data-code="--slds-c-toast-spacing-inline-end" onclick={handleCopyCode}
+                  type="button">
+            --slds-c-toast-spacing-inline-end
+            <template lwc:if={isLive}>
+              <lightning-icon alternative-text="Copy to clipboard"
+                              icon-name="utility:copy_to_clipboard"
+                              size="xx-small"
+                              title="Copy to clipboard">
+              </lightning-icon>
+            </template>
+          </button>
+        </div>
+
+        <div class="slds-p-around_xxx-small">
+          <button class="slds-text-body_regular" data-code="--slds-c-toast-sizing-min-width" onclick={handleCopyCode}
+                  type="button">
+            --slds-c-toast-sizing-min-width
+            <template lwc:if={isLive}>
+              <lightning-icon alternative-text="Copy to clipboard"
+                              icon-name="utility:copy_to_clipboard"
+                              size="xx-small"
+                              title="Copy to clipboard">
+              </lightning-icon>
+            </template>
+          </button>
+        </div>
+      </div>
+    </lightning-card>
+  </div>
+</template>
