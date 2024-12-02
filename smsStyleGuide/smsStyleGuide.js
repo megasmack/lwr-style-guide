@@ -33,10 +33,15 @@ export default class SmsStyleGuide extends LightningElement {
   @wire(CurrentPageReference)
   setCurrentPageReference(currentPageReference) {
     const app = currentPageReference?.state?.app;
+    const { hash } = window.location;
+    const page = hash?.slice(1);
     if (app === 'commeditor') {
       this.publishedState = 'Draft';
     } else {
       this.publishedState = 'Live';
+    }
+    if (page && this.pagesData.some((h) => h.value === page)) {
+      this.currentPage = page;
     }
   }
 
@@ -238,6 +243,9 @@ export default class SmsStyleGuide extends LightningElement {
   }
 
   handleTabClick(event) {
+    event.preventDefault();
+    event.stopPropagation();
     this.currentPage = event.target.dataset.key;
+    window.location.hash = this.currentPage;
   }
 }
