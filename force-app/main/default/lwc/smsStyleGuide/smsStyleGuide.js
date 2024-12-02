@@ -26,7 +26,6 @@ export default class SmsStyleGuide extends LightningElement {
     { label: 'Typography', value: 'typography' },
     { label: 'Accordion', value: 'accordion' },
   ];
-  colorObservers = [];
   colorsMapped = false;
   publishedState;
 
@@ -121,7 +120,7 @@ export default class SmsStyleGuide extends LightningElement {
 
   /**
    * Get the HEX color from the CSS Variable.
-   * @param cssVar
+   * @param {string} cssVar
    * @returns {string}
    */
   getColor(cssVar) {
