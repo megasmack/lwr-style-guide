@@ -1,11 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
-    <apiVersion>62.0</apiVersion>
-    <description>SMS Style Guide Component</description>
-    <isExposed>true</isExposed>
-    <masterLabel>SMS Style Guide</masterLabel>
-    <targets>
-        <target>lightningCommunity__Page</target>
-        <target>lightningCommunity__Default</target>
-    </targets>
+  <apiVersion>66.0</apiVersion>
+  <description>Steven M Schrab’s Visual Style Guide for LWR Sites</description>
+  <isExposed>true</isExposed>
+  <masterLabel>SMS Style Guide</masterLabel>
+  <targets>
+    <target>lightningCommunity__Page</target>
+    <target>lightningCommunity__Default</target>
+  </targets>
+  <targetConfigs>
+    <targetConfig targets="lightningCommunity__Default">
+      <property
+        name="startingPage"
+        type="String"
+        label="Starting Page"
+        description="First page to display when page loads."
+        datasource="accordion,buttons,colors,form,tabs,toasts,typography,custom"
+      />
+      <property
+        name="addCustom"
+        type="Boolean"
+        label="Add Custom Page"
+        description="Add a Custom tab where you can drag and drop custom components. Note: picking “custom” as your Starting Page will automatically display the custom tab."
+      />
+    </targetConfig>
+  </targetConfigs>
 </LightningComponentBundle>

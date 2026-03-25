@@ -1,18 +1,21 @@
 <template>
-
   <div class="slds-container_center slds-container_x-large">
-
-    <nav aria-label="Style Guide Navigation" class="slds-tabs_default slds-tabs_medium slds-m-bottom_medium">
+    <nav
+      aria-label="Style Guide Navigation"
+      class="slds-tabs_default slds-tabs_medium slds-m-bottom_medium"
+    >
       <ul class="slds-tabs_default__nav">
         <template for:each={pages} for:item="page">
           <li class={page.classes} key={page.value}>
-            <a href="#"
+            <a
+              href="#"
               aria-selected={page.active}
               class="slds-tabs_default__link"
               data-key={page.value}
               role="tab"
               tabindex={page.tabIndex}
-              onclick={handleTabClick}>
+              onclick={handleTabClick}
+            >
               {page.label}
             </a>
           </li>
@@ -22,140 +25,144 @@
 
     <lightning-card>
       <div slot="title">
-        Typography
+        <h1>Typography</h1>
       </div>
       <div class="slds-p-around_medium">
-        <div class="slds-m-top_small slds-m-bottom_medium">
-          <h3 class="slds-text-heading_small slds-p-bottom_medium">
-            Text Regular
-          </h3>
-          <div class="slds-m-left_large slds-text-body_regular">The quick brown fox jumps over the lazy dog.</div>
-        </div>
-        <div class="slds-m-top_small slds-m-bottom_medium">
-          <h3 class="slds-text-heading_small slds-p-bottom_medium">
-            Text Small
-          </h3>
-          <div class="slds-m-left_large slds-text-body_small">The quick brown fox jumps over the lazy dog.</div>
-        </div>
-        <div class="slds-m-top_small slds-m-bottom_medium">
-          <h3 class="slds-text-heading_small slds-p-bottom_medium">
-            H1 (dxp-text-heading-xlarge)
-          </h3>
-          <h1 class="slds-m-left_large dxp-text-heading-xlarge">The quick brown fox jumps over the lazy dog.</h1>
-        </div>
-        <div class="slds-m-top_small slds-m-bottom_medium">
-          <h3 class="slds-text-heading_small slds-p-bottom_medium">
-            Heading Large
-          </h3>
-          <div class="slds-m-left_large slds-text-heading_large">The quick brown fox jumps over the lazy dog.</div>
-        </div>
-        <div class="slds-m-top_small slds-m-bottom_medium">
-          <h3 class="slds-text-heading_small slds-p-bottom_medium">
-            Heading Medium
-          </h3>
-          <div class="slds-m-left_large slds-text-heading_medium">The quick brown fox jumps over the lazy dog.</div>
-        </div>
-        <div class="slds-m-top_small slds-m-bottom_medium">
-          <h3 class="slds-text-heading_small slds-p-bottom_medium">
-            Heading Small
-          </h3>
-          <div class="slds-m-left_large slds-text-heading_small">The quick brown fox jumps over the lazy dog.</div>
-        </div>
-        <div class="slds-m-top_small slds-m-bottom_medium">
-          <h3 class="slds-text-heading_small slds-p-bottom_medium">
-            Title
-          </h3>
-          <div class="slds-m-left_large slds-text-title">The quick brown fox jumps over the lazy dog.</div>
-        </div>
-        <div class="slds-m-top_small slds-m-bottom_medium">
-          <h3 class="slds-text-heading_small slds-p-bottom_medium">
-            Title Caps
-          </h3>
-          <div class="slds-m-left_large slds-text-title_caps">The quick brown fox jumps over the lazy dog.</div>
-        </div>
-        <div class="slds-m-top_small slds-m-bottom_medium">
-          <h3 class="slds-text-heading_small slds-p-bottom_medium">
-            Longform
-          </h3>
-          <div class="slds-m-left_large slds-text-longform">
-            <p>The quick brown fox jumps over the lazy dog.</p>
-            <p>The quick brown fox jumps over the lazy dog.</p>
-            <h3 class="slds-text-heading_small">Heading</h3>
-            <ul>
-              <li>The quick brown fox jumps over the lazy dog.</li>
-              <li>The quick brown fox jumps over the lazy dog.
-                <ul>
-                  <li>The quick brown fox jumps over the lazy dog.</li>
-                  <li>The quick brown fox jumps over the lazy dog.
-                    <ul>
-                      <li>The quick brown fox jumps over the lazy dog.</li>
-                      <li>The quick brown fox jumps over the lazy dog.</li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-            <h3 class="slds-text-heading_small">Heading</h3>
-            <ol>
-              <li>The quick brown fox jumps over the lazy dog.</li>
-              <li>The quick brown fox jumps over the lazy dog.
-                <ol>
-                  <li>The quick brown fox jumps over the lazy dog.</li>
-                  <li>The quick brown fox jumps over the lazy dog.
-                    <ol>
-                      <li>The quick brown fox jumps over the lazy dog.</li>
-                      <li>The quick brown fox jumps over the lazy dog.</li>
-                    </ol>
-                  </li>
-                </ol>
-              </li>
-            </ol>
-          </div>
-        </div>
-        <div class="slds-m-top_small slds-m-bottom_medium">
-          <h3 class="slds-text-heading_small slds-p-bottom_medium">
-            Color Default
-          </h3>
-          <div class="slds-m-left_large slds-text-color_default">The quick brown fox jumps over the lazy dog.</div>
-        </div>
-        <div class="slds-m-top_small slds-m-bottom_medium">
-          <h3 class="slds-text-heading_small slds-p-bottom_medium">
-            Color Success
-          </h3>
-          <div class="slds-m-left_large slds-text-color_success">The quick brown fox jumps over the lazy dog.</div>
-        </div>
-        <div class="slds-m-top_small slds-m-bottom_medium">
-          <h3 class="slds-text-heading_small slds-p-bottom_medium">
-            Color Weak
-          </h3>
-          <div class="slds-m-left_large slds-text-color_weak">The quick brown fox jumps over the lazy dog.</div>
-        </div>
-        <div class="slds-m-top_small slds-m-bottom_medium">
-          <h3 class="slds-text-heading_small slds-p-bottom_medium">
-            Color Error
-          </h3>
-          <div class="slds-m-left_large slds-text-color_error">The quick brown fox jumps over the lazy dog.</div>
-        </div>
-        <div class="slds-m-top_small slds-m-bottom_medium">
-          <h3 class="slds-text-heading_small slds-p-bottom_medium">
-            Destructive
-          </h3>
-          <div class="slds-m-left_large slds-text-color_destructive">The quick brown fox jumps over the lazy dog.</div>
-        </div>
-        <div class="slds-m-top_small slds-m-bottom_medium">
-          <h3 class="slds-text-heading_small slds-p-bottom_medium">
-            Inverse Color
-          </h3>
-          <div class="slds-m-left_large demo-only" style="padding:0.5rem; background-color: var(--dxp-g-root-contrast)">
-            <div class="slds-text-color_inverse">The quick brown fox jumps over the lazy dog.</div>
-          </div>
-        </div>
-        <div class="slds-m-top_small slds-m-bottom_medium">
-          <h3 class="slds-text-heading_small slds-p-bottom_medium">
-            Monospace
-          </h3>
-          <div class="slds-m-left_large slds-text-font_monospace">The quick brown fox jumps over the lazy dog.</div>
-        </div>
+        <dl>
+          <dt class="slds-p-top_medium">H1 (dxp-text-heading-xlarge)</dt>
+          <dd class="slds-box_border slds-p-around_small">
+            <h1 class="dxp-text-heading-xlarge">{typographySample}</h1>
+          </dd>
+          <dt class="slds-p-top_medium">H2 (dxp-text-heading-large)</dt>
+          <dd class="slds-box_border slds-p-around_small">
+            <h2 class="dxp-text-heading-large">{typographySample}</h2>
+          </dd>
+          <dt class="slds-p-top_medium">H3 (dxp-text-heading-medium)</dt>
+          <dd class="slds-box_border slds-p-around_small">
+            <h3 class="dxp-text-heading-medium">{typographySample}</h3>
+          </dd>
+          <dt class="slds-p-top_medium">H4 (dxp-text-heading-small)</dt>
+          <dd class="slds-box_border slds-p-around_small">
+            <h4 class="dxp-text-heading-small">{typographySample}</h4>
+          </dd>
+          <dt class="slds-p-top_medium">H5 (dxp-text-heading-xsmall)</dt>
+          <dd class="slds-box_border slds-p-around_small">
+            <h5 class="dxp-text-heading-xsmall">{typographySample}</h5>
+          </dd>
+          <dt class="slds-p-top_medium">H6 (dxp-text-heading-xxsmall)</dt>
+          <dd class="slds-box_border slds-p-around_small">
+            <h6 class="dxp-text-heading-xxsmall">{typographySample}</h6>
+          </dd>
+          <dt class="slds-p-top_medium">Text Regular</dt>
+          <dd class="slds-box_border slds-p-around_small">
+            <p class="slds-text-body_regular">{typographySample}</p>
+          </dd>
+          <dt class="slds-p-top_medium">Text Small</dt>
+          <dd class="slds-box_border slds-p-around_small">
+            <p class="slds-text-body_small">{typographySample}</p>
+          </dd>
+          <dt class="slds-p-top_medium">Text Weak</dt>
+          <dd class="slds-box_border slds-p-around_small">
+            <p class="slds-text-color_weak">{typographySample}</p>
+          </dd>
+          <dt class="slds-p-top_medium">Heading Large</dt>
+          <dd class="slds-box_border slds-p-around_small">
+            <p class="slds-text-heading_large">{typographySample}</p>
+          </dd>
+          <dt class="slds-p-top_medium">Heading Medium</dt>
+          <dd class="slds-box_border slds-p-around_small">
+            <div class="slds-text-heading_medium">{typographySample}</div>
+          </dd>
+          <dt class="slds-p-top_medium">Heading Small</dt>
+          <dd class="slds-box_border slds-p-around_small">
+            <div class="slds-text-heading_small">{typographySample}</div>
+          </dd>
+          <dt class="slds-p-top_medium">Title</dt>
+          <dd class="slds-box_border slds-p-around_small">
+            <div class="slds-text-title">{typographySample}</div>
+          </dd>
+          <dt class="slds-p-top_medium">Title Caps</dt>
+          <dd class="slds-box_border slds-p-around_small">
+            <div class="slds-text-title_caps">{typographySample}</div>
+          </dd>
+          <dt class="slds-p-top_medium">Longform</dt>
+          <dd class="slds-box_border slds-p-around_small">
+            <div class="slds-text-longform">
+              <p>{typographySample}</p>
+              <p>{typographySample}</p>
+              <h3 class="slds-text-heading_small">Heading</h3>
+              <ul>
+                <li>{typographySample}</li>
+                <li>
+                  {typographySample}
+                  <ul>
+                    <li>{typographySample}</li>
+                    <li>
+                      {typographySample}
+                      <ul>
+                        <li>{typographySample}</li>
+                        <li>{typographySample}</li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+              <h3 class="slds-text-heading_small">Heading</h3>
+              <ol>
+                <li>{typographySample}</li>
+                <li>
+                  {typographySample}
+                  <ol>
+                    <li>{typographySample}</li>
+                    <li>
+                      {typographySample}
+                      <ol>
+                        <li>{typographySample}</li>
+                        <li>{typographySample}</li>
+                      </ol>
+                    </li>
+                  </ol>
+                </li>
+              </ol>
+            </div>
+          </dd>
+          <dt class="slds-p-top_medium">Color Default</dt>
+          <dd class="slds-box_border slds-p-around_small">
+            <div class="slds-text-color_default">{typographySample}</div>
+          </dd>
+          <dt class="slds-p-top_medium">Color Success</dt>
+          <dd class="slds-box_border slds-p-around_small">
+            <div class="slds-text-color_success">{typographySample}</div>
+          </dd>
+          <dt class="slds-p-top_medium">Color Weak</dt>
+          <dd class="slds-box_border slds-p-around_small">
+            <div class="slds-text-color_weak">{typographySample}</div>
+          </dd>
+          <dt class="slds-p-top_medium">Color Error</dt>
+          <dd class="slds-box_border slds-p-around_small">
+            <div class="slds-text-color_error">{typographySample}</div>
+          </dd>
+          <dt class="slds-p-top_medium">Destructive</dt>
+          <dd class="slds-box_border slds-p-around_small">
+            <div class="slds-text-color_destructive">{typographySample}</div>
+          </dd>
+          <dt class="slds-p-top_medium">Inverse Color</dt>
+          <dd class="slds-box_border slds-p-around_small">
+            <div
+              class="demo-only"
+              style="
+                padding: 0.5rem;
+                background-color: var(--dxp-g-root-contrast);
+              "
+            >
+              <div class="slds-text-color_inverse">{typographySample}</div>
+            </div>
+          </dd>
+          <dt class="slds-p-top_medium">Monospace</dt>
+          <dd class="slds-box_border slds-p-around_small">
+            <div class="slds-text-font_monospace">{typographySample}</div>
+          </dd>
+        </dl>
       </div>
     </lightning-card>
   </div>

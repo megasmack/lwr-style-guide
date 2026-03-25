@@ -1,0 +1,35 @@
+<template>
+  <div class="slds-container_center slds-container_x-large">
+    <nav
+      aria-label="Style Guide Navigation"
+      class="slds-tabs_default slds-tabs_medium slds-m-bottom_medium"
+    >
+      <ul class="slds-tabs_default__nav">
+        <template for:each={pages} for:item="page">
+          <li class={page.classes} key={page.value}>
+            <a
+              href="#"
+              aria-selected={page.active}
+              class="slds-tabs_default__link"
+              data-key={page.value}
+              role="tab"
+              tabindex={page.tabIndex}
+              onclick={handleTabClick}
+            >
+              {page.label}
+            </a>
+          </li>
+        </template>
+      </ul>
+    </nav>
+
+    <lightning-card>
+      <div slot="title">
+        <slot name="CustomTitle"></slot>
+      </div>
+      <div class="slds-p-around_medium">
+        <slot name="CustomContent"></slot>
+      </div>
+    </lightning-card>
+  </div>
+</template>
